@@ -6,8 +6,9 @@
 */
 
 let str = function (a, b){
-  let c = a.substring(0, 2) + b.substring(5, 8);
+  let c = a.substring(0, 2) + b.substring(b.length - 3);
   return c.toUpperCase();
+  // const wordCant = (a,b) => (return (a.substring(0, 2) + b.substring(b.length - 3)).toUpperCase());
 }
 console.log(str("ciao", " a tutti"));
 
@@ -40,11 +41,8 @@ console.log(filteredNumbs);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-// numbersArray().forEach(number => number + numbersArray[number]);
-
-
-
-
+// const sumNumbArray = numbersArray().forEach(sumNumbArray, number => number + nu);
+// console.log(sumNumbArray());
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -63,6 +61,11 @@ console.log(n);
 
 const numbersArrayMapped = numbersArray().map(number => number + n);
 console.log(numbersArrayMapped);
+// correzione
+
+// const numbersArrayMapped = function (n){
+//   return numbersArray().map(number => number + n)}
+//   console.log(numbersArrayMapped(4));
 
 // controllo
 
@@ -99,6 +102,20 @@ const numbersArrayOdd = function (){
 }
 
 console.log(numbersArrayOdd());
+
+// forEach
+
+
+let aOdd = function(){
+  let odd = [];
+  [...Array(100)].forEach((_, i) =>{ 
+  if((i + 1) % 2 !== 0){
+  odd.push(i+1)
+  }
+})
+return odd}
+
+console.log(aOdd());
 
 
 /* Questo array di film verrà usato negli esercizi a seguire. 
@@ -253,14 +270,31 @@ const moviesXI = movies.filter(movie => parseInt(movie.Year) >= 2000)
 console.log(moviesXI);
 
 /* ESERCIZIO 13 (reduce)
-  Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
+  Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i 
+  film contenuti nell'array fornito.
 */
+
+// const sumNumbersArray = numbersArray().reduce((sumNumbersArray, number) => sumNumbersArray + number, 0)
+// console.log(sumNumbersArray);
+
+const sumMoviesXI = moviesXI.reduce((sumMoviesXI, time) => sumMoviesXI + time.Year)
+console.log(sumMoviesXI);
 
 
 
 /* ESERCIZIO 14 (find)
-  Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
+  Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un 
+    imdbID come parametro).
 */
+
+// const array1 = [5, 12, 8, 130, 44];
+
+// const found = array1.find((element) => element > 10);
+
+// console.log(found);
+//  Expected output: 12
+
+// const movieFoud = movies.find((imdbID))
 
 
 
