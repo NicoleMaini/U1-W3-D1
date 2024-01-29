@@ -101,9 +101,8 @@ const numbersArrayOdd = function (){
 console.log(numbersArrayOdd());
 
 
-
-
-/* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
+/* Questo array di film verrà usato negli esercizi a seguire. 
+Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
     Title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -224,18 +223,26 @@ const movies = [
 */
 
 
+// movies.forEach(movie => console.log(movie <= parseInt(movie.Year)))
+
+
 
 /* ESERCIZIO 10
-  Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
+Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
+  const numberMovies = movies => (console.log(movies.length));
+  numberMovies(movies)
 
 
 /* ESERCIZIO 11 (map)
-  Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
+  Scrivi una funzione per creare un array con solamente i titoli dei film contenuti 
+  nell'array fornito.
 */
 
+const titleMovies = movies.map(title => title.push(movies.Title))
 
+console.log(titleMovies());
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
