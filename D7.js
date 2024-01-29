@@ -10,7 +10,7 @@ let str = function (a, b){
   return c.toUpperCase();
   // const wordCant = (a,b) => (return (a.substring(0, 2) + b.substring(b.length - 3)).toUpperCase());
 }
-console.log(str("ciao", " a tutti"));
+console.log("Es 1:", str("ciao", " a tutti"));
 
 
 /* ESERCIZIO 2 (for)
@@ -26,7 +26,7 @@ const numbersArray = function() {
   return numbers
 }
 
-console.log("Array di numeri:", numbersArray());
+console.log("Es 2:", numbersArray());
   
 
 /* ESERCIZIO 3 (filter)
@@ -35,7 +35,7 @@ console.log("Array di numeri:", numbersArray());
 */
 
 const filteredNumbs = numbersArray().filter(num => num % 2 === 0);
-console.log(filteredNumbs);
+console.log("Es 3:",filteredNumbs);
 
 
 /* ESERCIZIO 4 (forEach)
@@ -50,7 +50,7 @@ const sumNumbArray = function(){
   return sum;
 }
 
-console.log(sumNumbArray());
+console.log("Es 4:",sumNumbArray());
 
 
 /* ESERCIZIO 5 (reduce)
@@ -58,7 +58,7 @@ console.log(sumNumbArray());
 */
 
 const sumNumbersArray = numbersArray().reduce((sumNumbersArray, number) => sumNumbersArray + number, 0)
-console.log(sumNumbersArray);
+console.log("Es 5:",sumNumbersArray);
 
 
 /* ESERCIZIO 6 (map)
@@ -69,7 +69,7 @@ const n = Math.floor(Math.random()*11);
 console.log(n);
 
 const numbersArrayMapped = numbersArray().map(number => number + n);
-console.log(numbersArrayMapped);
+console.log("Es 6:",numbersArrayMapped);
 
 // correzione
 
@@ -94,7 +94,7 @@ console.log(numbersArrayMapped);
 const stringArray = ["ciao", "siamo", "studenti", "in", "epicode"];
 
 const stringMapped = stringArray.map(string => string.length);
-console.log(stringMapped);
+console.log("Es 7:",stringMapped);
 
 
 /* ESERCIZIO 8 (forEach o for)
@@ -111,7 +111,7 @@ const numbersArrayOdd = function (){
   return numberOdd
 }
 
-console.log(numbersArrayOdd());
+console.log("Es 8:",numbersArrayOdd());
 
 // forEach
 
@@ -124,7 +124,7 @@ let aOdd = function(){
 })
 return odd}
 
-console.log(aOdd());
+console.log("Es 8 bis:",aOdd());
 
 
 /* Questo array di film verrà usato negli esercizi a seguire. 
@@ -247,35 +247,25 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-// const sumNumbArray = function(){
-//   let sum = 0;
-//   numbersArray().forEach(function (element){
-//     sum += element;
-//   })
-//   return sum;
-// }
-
-// console.log(sumNumbArray());
 
 const olderMovie = function (array){
-  array.sort().forEach(function(movie){
-    movie 
+  let oldestMovie = null;
+  array.forEach(function (movie){
+    if (!oldestMovie || movie.Year < oldestMovie.Year){
+      oldestMovie = movie
+    }
   })
+  return oldestMovie
 }
 
-console.log(olderMovie(movies));
-
-// movies.forEach(movie => console.log(movie <= parseInt(movie.Year)))
-
-
+console.log("Es 9:", olderMovie(movies));
 
 /* ESERCIZIO 10
 Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
-  const numberMovies = movies => (console.log(movies.length));
-  numberMovies(movies)
-
+const numberMovies = movies => (console.log("Es 10:", movies.length));
+numberMovies(movies)
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti 
@@ -283,8 +273,7 @@ Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
 const titleMovies = movies.map(movie => movie.Title)
-
-console.log(titleMovies);
+console.log("Es 11:", titleMovies);
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente di film usciti nel millennio 
@@ -292,20 +281,15 @@ console.log(titleMovies);
 */
 
 const moviesXI = movies.filter(movie => parseInt(movie.Year) >= 2000)
-console.log(moviesXI);
+console.log("Es 12:", moviesXI);
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i 
   film contenuti nell'array fornito.
 */
 
-// const sumNumbersArray = numbersArray().reduce((sumNumbersArray, number) => sumNumbersArray + number, 0)
-// console.log(sumNumbersArray);
-
 const sumMoviesXI = moviesXI.reduce((sumMoviesXI, date) => sumMoviesXI + parseInt(date.Year), 0)
-console.log(sumMoviesXI);
-
-
+console.log("Es 13:", sumMoviesXI);
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film 
@@ -313,7 +297,7 @@ console.log(sumMoviesXI);
 */
 
 const movieFound = movies.find(element => element.imdbID === 'tt4154796')
-console.log(movieFound);
+console.log("Es 14:", movieFound);
 
 
 /* ESERCIZIO 15 (findIndex)
@@ -321,5 +305,5 @@ console.log(movieFound);
   film uscito nell'anno fornito come parametro.
 */
 
-const moviesIndex = movies.findIndex (element => element.Year === "1984")
-console.log(moviesIndex);
+const moviesIndex = movies.findIndex (element => element.Year === "2005")
+console.log("Es 15:", moviesIndex);
