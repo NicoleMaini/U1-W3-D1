@@ -240,9 +240,9 @@ Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
   nell'array fornito.
 */
 
-const titleMovies = movies.map(title => title.push(movies.Title))
+const titleMovies = movies.map(movie => movie.Title)
 
-console.log(titleMovies());
+console.log(titleMovies);
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
