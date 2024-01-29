@@ -28,6 +28,7 @@ const numbersArray = function() {
 
 console.log("Array di numeri:", numbersArray());
   
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori 
   numerici
@@ -41,8 +42,16 @@ console.log(filteredNumbs);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-// const sumNumbArray = numbersArray().forEach(sumNumbArray, number => number + nu);
-// console.log(sumNumbArray());
+const sumNumbArray = function(){
+  let sum = 0;
+  numbersArray().forEach(function (element){
+    sum += element;
+  })
+  return sum;
+}
+
+console.log(sumNumbArray());
+
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -61,6 +70,7 @@ console.log(n);
 
 const numbersArrayMapped = numbersArray().map(number => number + n);
 console.log(numbersArrayMapped);
+
 // correzione
 
 // const numbersArrayMapped = function (n){
@@ -104,7 +114,6 @@ const numbersArrayOdd = function (){
 console.log(numbersArrayOdd());
 
 // forEach
-
 
 let aOdd = function(){
   let odd = [];
@@ -238,7 +247,23 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+// const sumNumbArray = function(){
+//   let sum = 0;
+//   numbersArray().forEach(function (element){
+//     sum += element;
+//   })
+//   return sum;
+// }
 
+// console.log(sumNumbArray());
+
+const olderMovie = function (array){
+  array.sort().forEach(function(movie){
+    movie 
+  })
+}
+
+console.log(olderMovie(movies));
 
 // movies.forEach(movie => console.log(movie <= parseInt(movie.Year)))
 
@@ -277,27 +302,24 @@ console.log(moviesXI);
 // const sumNumbersArray = numbersArray().reduce((sumNumbersArray, number) => sumNumbersArray + number, 0)
 // console.log(sumNumbersArray);
 
-const sumMoviesXI = moviesXI.reduce((sumMoviesXI, time) => sumMoviesXI + time.Year)
+const sumMoviesXI = moviesXI.reduce((sumMoviesXI, date) => sumMoviesXI + parseInt(date.Year), 0)
 console.log(sumMoviesXI);
 
 
 
 /* ESERCIZIO 14 (find)
-  Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un 
-    imdbID come parametro).
+  Scrivi una funzione per ottenere dall'array fornito uno specifico film 
+  (la funzione riceve un imdbID come parametro).
 */
 
-// const array1 = [5, 12, 8, 130, 44];
-
-// const found = array1.find((element) => element > 10);
-
-// console.log(found);
-//  Expected output: 12
-
-// const movieFoud = movies.find((imdbID))
-
+const movieFound = movies.find(element => element.imdbID === 'tt4154796')
+console.log(movieFound);
 
 
 /* ESERCIZIO 15 (findIndex)
-  Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
+  Scrivi una funzione per ottenere dall'array fornito l'indice del primo 
+  film uscito nell'anno fornito come parametro.
 */
+
+const moviesIndex = movies.findIndex (element => element.Year === "1984")
+console.log(moviesIndex);
